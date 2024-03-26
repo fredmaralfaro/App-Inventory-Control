@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC_Inventory.Models.User>
+﻿@model IEnumerable<MVC_Inventory.Models.Client>
 
 @{
     ViewData["Title"] = "Index";
@@ -7,16 +7,21 @@
 <h1>Inicio</h1>
 
 <p>
-    <a asp-action="Create">Crear Nuevo</a>
+    <a asp-action="Create">Nuevo Cliente</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 Nombre
+            <th>
+                Correo
             </th>
             <th>
-                Fecha
+                Teléfono
+            </th>
+            <th>
+                Dirección
             </th>
             <th></th>
         </tr>
@@ -25,10 +30,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Names)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
                 <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a> |

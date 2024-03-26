@@ -1,0 +1,47 @@
+﻿@model MVC_Inventory.Models.Client
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Nuevo Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-3">
+                <label asp-for="Names" class="control-label">Nombre</label>
+                <input asp-for="Names" class="form-control" />
+                <span asp-validation-for="Names" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Email" class="control-label">Correo</label>
+                <input asp-for="Email" class="form-control" type="email"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Phone" class="control-label">Teléfono</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Address" class="control-label">Dirección</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br/>
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

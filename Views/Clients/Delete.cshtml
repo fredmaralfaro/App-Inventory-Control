@@ -1,4 +1,4 @@
-﻿@model MVC_Inventory.Models.User
+﻿@model MVC_Inventory.Models.Client
 
 @{
     ViewData["Title"] = "Delete";
@@ -12,13 +12,25 @@
             Nombre
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.Names)
         </dd>
         <dt class = "col-sm-2">
-            Fecha
+            Correo
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            Teléfono
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            Dirección
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
         </dd>
     </dl>
     
