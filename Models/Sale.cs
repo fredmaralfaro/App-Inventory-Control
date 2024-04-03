@@ -15,8 +15,6 @@ public partial class Sale
 
     public int Amount { get; set; }
 
-    public byte[]? Photo { get; set; }
-
     public virtual Client IdClientNavigation { get; set; } = null!;
 
     public virtual Product IdProductNavigation { get; set; } = null!;

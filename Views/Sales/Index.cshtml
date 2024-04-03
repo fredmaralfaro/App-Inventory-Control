@@ -1,10 +1,8 @@
-﻿@model IEnumerable<MVC_Inventory.Models.User>
+﻿@model IEnumerable<MVC_Inventory.Models.Sale>
 
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Inicio</h1>
 
 <p>
     <a asp-action="Create">Crear Nuevo</a>
@@ -13,10 +11,16 @@
     <thead>
         <tr>
             <th>
-                Nombre
+                Fecha
             </th>
             <th>
-                Fecha
+                Precio
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Producto
             </th>
             <th></th>
         </tr>
@@ -25,10 +29,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdClientNavigation.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProductNavigation.Code)
             </td>
             <td>
                 <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a> |
